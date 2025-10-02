@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main () {
+    
+    int weather_temperature;
+    
+    cout << "What's the weather today, cuh/maem?";
+    cin >> weather_temperature;
+    
+    cout << "Woah! it's " << weather_temperature << " degree celcius today?";
+    
+    if (weather_temperature >= 30) {
+        cout << "It's hot! You can get lemonade for 0.80$ then.";
+    }
+    
+    else {
+        cout << "Lamig! 1$ nalang!";
+    }
+    
+    return 0;
+    
+}
