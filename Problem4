@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float cup, total_price, total_discount, how_much;
+    
+    cout << "~~ | CUP & DISCOUNT | ~~" << endl;
+    
+    cout << "How many cups do you want?" << endl;
+    cin >> cup;
+    
+    if (cup <= 4) {
+        cout << "Please enjoy your lemonade. It's unfortunate you can't get a discount.";
+    }
+        
+    else if (5 <= cup >= 9){ 
+        total_price = cup * 1;
+        total_discount = total_price * 0.10;
+        how_much = total_price - total_discount;
+        cout << "You can get " << cup << " cups for $" << how_much;
+    }
+        
+    else (cup >= 10); {
+        total_price = cup * 1;
+        total_discount = total_price * 0.20;
+        how_much = total_price - total_discount;
+        cout << "You can get " << cup << " cups for $" << how_much;
+    } 
+
+    return 0;
+}
