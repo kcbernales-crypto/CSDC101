@@ -1,0 +1,187 @@
+#include <iostream>
+using namespace std;
+
+int main () {
+    
+    int customers_money, weather_temperature, lemon, sugar, a = 0, b = 0, y, n;
+    float cup, total_price, total_discount, how_much;
+    char game;
+    char move;
+    char again;
+    char prob;
+    
+    cout << "Hello. My name is Camille." << endl;
+    cout << endl;
+    
+    do {
+    cout << "What game do you prefer to play today, player?" << endl;
+    cout << "Press 'A' to play Money or No Money." << endl;
+    cout << "Press 'B' to play Discount." << endl;
+    cout << "Press 'C' to play No Lemons, No sugars." << endl;
+    cout << "Press 'D' to play Cup & Discount." << endl;
+    cout << "Press 'E' to play Graph Game." << endl;
+    cout << "So, what game? ";
+    cin >> game;
+    
+    cout << endl << endl;
+    
+        
+        switch (game) {
+            case 'A':
+            case 'a':
+                cout << "~~ | Play the Money or No Money | ~~" << endl;
+                cout << "How much money do you have, sir/ma'am?";
+                cin >> customers_money;
+                
+                if (customers_money >= 1) {
+                    cout << "You can enjoy a lemonade!" << endl;
+                    
+                }
+            
+                else {
+                cout << "Sorry, you need more money." << endl;
+                
+                }   
+            
+                break;
+    
+            case 'B':
+            case 'b':
+                cout << "~~ | Play the Discount | ~~" << endl;
+                cout << "What's the temperature today? ";
+                cin >> weather_temperature;
+        
+                cout << "Woah! it's " << weather_temperature << " degree celcius today?!" << endl << endl;
+        
+                if (weather_temperature >= 30) {
+                    cout << "It's hot! You can get lemonade for 0.80$ then.";
+                
+                }
+        
+                else {
+                    cout << "Sadly, you get no discount! That will be $1 a cup." << endl;
+            
+                }
+        
+                break;
+            
+            case 'C':
+            case 'c':
+                cout << "~~ | Play the No Lemons, No Sugars | ~~" << endl;
+                cout << "Lemons: ";
+                cin >> lemon;
+        
+                cout << "Sugars: ";
+                cin >> sugar;
+        
+                if (sugar <= 0 || lemon <= 0) {
+                    cout << "You can't make lemonades!" << endl;
+                
+                }
+                else {
+                    cout << "You're ready to sell lemonades." << endl;
+                }
+        
+                break;
+        
+            case 'D':
+            case 'd':
+                cout << "~~ | Play the Cups & Discounts | ~~" << endl;
+                cout << "How many cups do you want? ";
+                cin >> cup;
+        
+                if (cup <= 4) {
+                    cout << "Please enjoy your lemonade. It's unfortunate you can't get a discount.";
+            
+                }
+        
+                else if (5 <= cup >= 9){ 
+                    total_price = cup * 1;
+                    total_discount = total_price * 0.10;
+                    how_much = total_price - total_discount;
+                    cout << "You can get " << cup << " cups for $" << how_much;
+                    
+                }
+        
+                else (cup >= 10); {
+                    total_price = cup * 1;
+                    total_discount = total_price * 0.20;
+                    how_much = total_price - total_discount;
+                    cout << "You can get " << cup << " cups for $" << how_much << endl;
+                    
+                } 
+        
+                break;
+        
+            case 'E':
+            case 'e':
+        
+                cout << "~~ | Play the Graph Game | ~~" << endl;
+        
+                do {
+                    cout << "Choose your movement: " << endl << "Direction (W, S, A, D) : ";
+                    cin >> move;
+                    cout << endl << endl;
+            
+                    switch (move) {
+                        case 'W':
+                        case 'w':
+                            b = b + 1;
+                            cout << "The location of the player is (" << a << ", " << b << ")." << endl << endl;
+                            break;
+                
+                        case 'S':
+                        case 's':
+                            b = b - 1;
+                            cout << "The location of the player is (" << a << ", " << b << ")." << endl << endl;
+                            break;
+                
+                        case 'A':
+                        case 'a':
+                            a = a - 1;
+                            cout << "The location of the player is (" << a << ", " << b << ")." << endl << endl;
+                            break;
+                
+                        case 'D':
+                        case 'd':
+                            a = a + 1;
+                            cout << "The location of the player is (" << a << ", " << b << ")." << endl << endl;
+                            break;
+                
+                        default:
+                            cout << "Invalid move. Please enter W, S, A or D." << endl << endl;
+                            continue;
+                
+                    }       
+            
+                cout << "Do you want to move again? (y/n): ";
+                cin >> again;
+                cout << endl;
+            
+                }
+            
+                while (again != 'n');
+                cout << "The final location of the player is (" << a << ", " << b << ")." << endl;
+
+                break;
+        
+            default:
+            cout << "Invalid choice. Please press A, B, C, D or E.";
+            cout << endl;
+            cout << endl;
+            continue;
+            
+        }
+     
+    
+    
+        cout << endl;
+        cout << "Do you want to solve another problem? (y/n)? ";
+        cin >> prob;
+
+    }
+
+    while (prob != 'n');
+    cout << "Exiting the program.";
+    
+}   
