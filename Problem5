@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+int main () {
+    
+    int a = 0, b = 0, y, n;
+    char move;
+    char again;
+    
+    cout << "~~ | GRAPH GAME | ~~" << endl << endl;
+    
+    do {
+    cout << "Choose your movement: " << endl << "Direction (W, S, A, D) : ";
+    cin >> move;
+    cout << endl << endl;
+    
+    switch (move) {
+        case 'W':
+        case 'w':
+            b = b + 1;
+            cout << "The location of the player is (" << a << ", " << b << ")." << endl << endl;
+            break;
+        
+        case 'S':
+        case 's':
+            b = b - 1;
+            cout << "The location of the player is (" << a << ", " << b << ")." << endl << endl;
+            break;
+            
+        case 'A':
+        case 'a':
+            a = a - 1;
+            cout << "The location of the player is (" << a << ", " << b << ")." << endl << endl;
+            break;
+            
+        case 'D':
+        case 'd':
+            a = a + 1;
+            cout << "The location of the player is (" << a << ", " << b << ")." << endl << endl;
+            break;
+        
+        default:
+            cout << "Invalid move. Please enter W, S, A or D." << endl << endl;
+            continue;
+    }
+    
+    cout << "Do you want to move again? (y/n): ";
+    cin >> again;
+    
+    }
+    
+    while (again != 'n');
+        cout << "The final location of the player is (" << a << ", " << b << ")." << " Exiting the program.";
+
+}
