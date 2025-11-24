@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+int main () {
+    char conversion;
+    float F, C, tempvalue;
+    
+    bool invalid = true;    
+    
+    while (invalid) {
+        cout << "Choose a conversion type.\n";
+        cout << "\nEnter a for Celsius to Fahrenheit";
+        cout << "\nEnter b for Fahrenheit to Celsius";
+        cout << "\nChoice: ";
+        cin >> conversion << endl;
+        
+        
+        
+        
+        switch (conversion) {
+            case 'a':
+            case 'A':
+                cout << "\n\nTemperature value: ";
+                cin >> tempvalue;
+                
+                F = (tempvalue * 9/5) + 32;
+                
+                cout << tempvalue << "°C = " << F << "°F";
+                invalid = false;
+                break;
+                
+            case 'b':
+            case 'B':
+                cout << "\n\nTemperature value: ";
+                cin >> tempvalue;
+                
+                C = (tempvalue - 32) * 0.5;
+                
+                cout << tempvalue << "°F = " << C << "°C";
+                invalid = false;
+                break;
+                
+            default:
+                cout << "Invalid choice. Pick only between a and b";
+                continue;
+        }
+        cout << endl << endl;
+    }
+}
