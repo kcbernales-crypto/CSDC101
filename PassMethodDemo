@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+void FunctionValue(int l) { // pass byvalue, square a number
+    l = l * l; 
+    cout << "Inside passByValue(): l = " << l << endl;
+}
+
+void FunctionReference(int &w) { // pass byreference, square a number
+    w = w * w; 
+    cout << "Inside passByReference(): w = " << w << endl;
+}
+
+int main() {
+    int a = 5;
+
+    cout << "Before passByValue(): a = " << a << endl;
+    FunctionValue(a); //output changes from funcone
+    cout << "After passByValue(): a = " << a << endl;
+    
+    cout << endl;
+    
+    int b = 5;
+
+    cout << "Before passByReference(): b = " << b << endl;
+    FunctionReference(b); //output inside passbyvalue
+    cout << "After passByReference(): b = " << b << endl;
+
+    return 0;
+}
+
